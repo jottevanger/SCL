@@ -1,0 +1,346 @@
+/*set up variables for colours*/
+/*
+:root {
+	--main-bg-color: #ffffff;
+	--border-text-color: #c0c0c0;
+	--nav-bg-color: #55443D;
+	--highlight-color: #F38A8A;
+}
+
+:root {
+	--main-bg-color: #ebebe3;
+	--border-text-color: #4a4a48;
+	--nav-bg-color: #2b2b28;
+	--highlight-color: #c19898;
+}
+
+:root {
+	--main-bg-color: #f9f8eb;
+	--border-text-color: #76b39d;
+	--nav-bg-color: #05004e;
+	--highlight-color: #fd5f00;
+}
+
+:root {
+	--main-bg-color: #ece8d9;
+	--main-text-color: #444;
+	--border-color: #00adb5;
+	--highlight-color: #f8b500;
+	--nav-bg-color: #393e46;
+	--nav-link-color: #fff;
+}
+
+*/
+
+
+:root {
+	--main-bg-color: #fdfdf3;
+	--main-text-color: #444;
+	--border-color: #1c819e;
+	--highlight-color: #ffbe00;
+	--nav-bg-color: #005874;
+	--nav-link-color: #fff;
+
+/*default*/
+	--main-bg-color-0: #fdfdf3;
+	--main-text-color-0: #444;
+	--border-color-0: #1c819e;
+	--highlight-color-0: #ffbe00;
+	--nav-bg-color-0: #005874;
+	--nav-link-color-0: #fff;
+
+/*high-contrast*/
+	--main-bg-color-1: #ffffff;
+	--main-text-color-1: #00552a;
+	--border-color-1: #00552a;
+	--highlight-color-1: #00ffff;
+	--nav-bg-color-1: #00552a;
+	--nav-link-color-1: #ffffff;
+
+/*chill*/
+	--main-bg-color-2: #ebebe3;
+	--main-text-color-2: #2b2b28;
+	--border-color-2: #2b2b28;
+	--highlight-color-2: #c19898;
+	--nav-bg-color-2: #4a4a48;
+	--nav-link-color-2: #c19898;
+
+/*smart*/
+	--main-bg-color-3: #ece8d9;
+	--main-text-color-3: #444;
+	--border-color-3: #00adb5;
+	--highlight-color-3: #f8b500;
+	--nav-bg-color-3: #393e46;
+	--nav-link-color-3: #fff;
+
+/*IN YOUR FACE*/
+	--main-bg-color-4: #f7f7f7;
+	--main-text-color-4: #444;
+	--border-color-4: #f30e5c;
+	--highlight-color-4: #f6c523;
+	--nav-bg-color-4: #f30e5c;
+	--nav-link-color-4: #f6f3a7;
+
+}
+
+
+body{
+	background-color: var(--main-bg-color);
+	color:var(--main-text-color);
+}
+
+p{
+	text-align: justify;
+}
+
+a{
+	color: var(--border-color);
+}
+
+a:hover{
+	color: var(--highlight-color);
+}
+
+blockquote{
+	font-size: 1.1em;
+	font-style: italic;
+	margin-bottom: 3rem;
+	margin-top: 0;
+/*	padding:0px 8% 20px 8%;*/
+	text-align:justify;
+}
+
+
+ol, ul {
+	padding-left: 2em;
+}
+ h2{
+	 text-align: right;
+	 font-style: italic;
+	 width: 100%;
+	 border-bottom: solid var(--main-text-color) 1px;
+ }
+  
+h2::before{
+	content: ">>>   ";
+	font-size: 4.0rem;
+	font-style: italic;
+}
+
+#mainContent{
+	clear: both;
+}
+.upper-me {
+	text-transform: uppercase;
+	letter-spacing: .5rem;
+}
+
+.img-caption{
+	font-size: 1rem;
+	font-style: italic;
+	color: var(--nav-link-color);
+	padding:0 0 5px 5px;
+}
+
+.case-study{
+	box-sizing: border-box;
+	padding:4rem;
+	border:dotted var(--border-color) 1px;
+	border-radius: 3rem;
+}
+
+.doubletopspace{
+	margin-top: 12rem;
+}
+
+.topspace{
+	margin-top: 6rem;
+}
+
+.bottomspace{
+	margin-bottom: 44rem;
+}
+
+/*
+    https://codepen.io/joxmar/pen/NqqMEg
+    highlight menu item on scroll (and smooth scroll on click)
+    depends on links using anchor tags, and adds/removes "active" class to their parent element.
+    also calculates based on there being a menu fixed to the top, the bottom edge of which defines the point at which the highlighted item changes/to which it scrolls on-click.
+    See relevant CSS section in scl.css
+*/
+
+nav{
+	position:fixed;
+	top:0;
+	left:0;
+	background:#005874;
+	background:var(--nav-bg-color);
+	width:100%;
+	z-index: 1;
+}
+nav	ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	position:relative;
+	display:table;
+	margin:0 auto;
+	color:#fff;
+}
+nav ul li{
+	display:table-cell;
+}
+nav ul li a{
+	padding:10px 20px;
+	display:block;
+	color:#fff;
+	color:var(--nav-link-color);
+	text-decoration:none;
+	transition:all 0.3s ease-in-out;
+}
+nav ul li a:hover{
+	color:var(--highlight-color);
+}
+@media (min-width: 300px) {
+	.nav-title-above{
+		display: block;
+		border-bottom: solid var(--nav-link-color) 1px;
+		margin:0 auto;
+		text-align: left;
+		clear:both;
+		color:var(--nav-link-color);
+	}
+	.nav-title-left{
+		display: none;
+	}
+
+	.great-figure{
+		box-sizing: border-box;
+		background-color: var(--nav-bg-color);
+	}
+	.great-figure img{
+		max-width: 100%;
+	}
+	
+}
+
+
+
+@media (min-width: 750px) {
+	.nav-title-above{
+		display: none;
+	}
+	.nav-title-left{
+		display:block;
+		color:var(--nav-link-color);
+		padding-right: 1rem;
+		padding-left: 1rem;
+		margin-right: 1rem;
+		border-right: solid var(--nav-link-color) 1px;
+	}
+	.great-figure{
+		box-sizing: border-box;
+		margin:0 3rem;
+		background-color: var(--nav-bg-color);
+	}
+	.great-figure img{
+		max-width: 100%;
+	}
+}
+
+
+.active a{
+	color:var(--highlight-color);
+	border-bottom:3px solid var(--highlight-color);
+}
+
+
+/*
+CSS-only popover from https://codepen.io/imprakash/pen/GgNMXO
+*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  max-width: 760px;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.popup .close:hover {
+  color: var(--highlight-color);
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+
+
+/*
+colourwheel icons
+<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+*/
+
+
+
+/*
+palettes
+
+https://colorhunt.co/palette/133103
+ebebe3
+2b2b28
+4a4a48
+c19898
+
+https://colorhunt.co/palette/135151
+f9f8eb
+76b39d
+05004e
+fd5f00
+
+https://colorhunt.co/palette/130904
+f8b500
+ece8d9
+00adb5
+
+:root {
+	--main-bg-color: #ece8d9;
+	--border-text-color: #00adb5;
+	--nav-bg-color: #393e46;
+	--highlight-color: #f8b500;
+}
+
+*/
