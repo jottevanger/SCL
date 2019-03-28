@@ -119,6 +119,7 @@ ol, ul {
 	 font-style: italic;
 	 width: 100%;
 	 border-bottom: solid var(--main-text-color) 1px;
+	 margin-bottom: 4.5rem;
  }
   
 h2::before{
