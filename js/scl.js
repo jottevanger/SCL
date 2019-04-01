@@ -54,9 +54,16 @@ function youDisgustMe(){    //cycles through palettes
         offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
         $('html, body').stop().animate({ 
         scrollTop: offsetTop
-    }, 850);
+        }, 850);
     e.preventDefault();
     });
+
+    $(document).keydown(function(e){
+        if (e.keyCode == 27) {  //escape key
+          $('.overlay').removeClass('show');
+        }
+      })
+
 
     // Bind to scroll
     $(window).scroll(function(){
